@@ -1,5 +1,5 @@
 import time
-# from queue import Queue 
+from binary_search_tree import BSTNode
 
 start_time = time.time()
 
@@ -12,22 +12,15 @@ names_2 = f.read().split("\n")  # List containing 10000 names
 f.close()
 
 duplicates = []  # Return the list of duplicates in this data structure
-# Q_1 = Queue()
-# Q_2 = Queue()
-# Q_3 = Queue()
+name_ST = BSTNode("wibble")
 # Replace the nested for loops below with your improvements
 for name_1 in names_1:
-    # Q_1.enqueue(name_1)
-    if name_1 in names_2:
-        duplicates.append(name_1)
-# for name_2 in names_2:
-#     Q_2.enqueue(name_2)
+    name_ST.insert(name_1)
+    
 
-# for name in Q_1.storage:
-#     if name in Q_2.storage:
-#         Q_3.enqueue(name)
-  
-# duplicates= Q_3.storage
+for name_2 in names_2:
+    if name_ST.contains(name_2):
+        duplicates.append(name_2)
 """I tried very hard to impliment queues into the problem but for some reason 
 it would not recognize the attributes I needed so I went with what I know."""
 end_time = time.time()
